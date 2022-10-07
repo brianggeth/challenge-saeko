@@ -1,0 +1,69 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.sudoku {
+  height: 100%;
+  width: 100%;
+  outline: none;
+}
+
+.sudoku-grid {
+  display: flex;
+  flex-flow: row wrap;
+
+  padding: 0;
+  margin: -10px 0 0 -10px;
+}
+
+.sudoku-cell {
+  display: inline-block;
+  background-color: rgba(45, 147, 208, 0.3);
+  margin: 10px 0 0 10px;
+  flex-grow: 1;
+  position: relative;
+  width: calc(100% * (1 / 3) - 10px - 1px);
+}
+
+.sudoku-cell:before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+}
+
+.sudoku-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 4vw;
+  font-weight: bold;
+  color: #2d93d0;
+  outline: none;
+  cursor: pointer;
+  caret-color: transparent;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.selected {
+  background-color: rgba(111, 47, 142, 0.3) !important;
+}
